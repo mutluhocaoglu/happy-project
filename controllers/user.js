@@ -1,5 +1,4 @@
 const axios = require('axios');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
 //const bodyParser = require('body-parser');
