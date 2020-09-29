@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>OSF Global</title>
+</head>
+<h4>Cart</h4>
+<body>
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/cart">Cart</a></li>  
+      </ul>
+      <ul>
+
+        <% if (products.length > 0) { %>
+        <table class="table table-inverse">
+            <thead>
+              <tr>
+                <th>id</th>
+                <!-- <th>Page Title</th> -->
+                <th>Price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <% for(var i=0; i < products.length; i++) { %>
+              <tr>
+                <td><%= products[i].productId %></td>
+                <td>$<%= products[i].variant.price %></td>
+                <td><%= products[i].quantity %></td>
+                <td><%= products[i].variant.product_id %></td>
+                <td><form action="/removefromcart" method="POST">
+                  <button type="submit" style="width: 300px; ">Remove From Cart</button>
+                </td></form>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          
+          <% } else { %>
+            <h1>No Products in Cart!</h1>
+        <% } %>
+    </ul>
+  
+</body>
+
+<footer>
+  <%- include('partials/footer'); %>
+</footer>
+</html>

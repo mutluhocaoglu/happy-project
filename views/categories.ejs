@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>OSF Global</title>
+</head>
+<body>
+ 
+  <ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a><%= products[0].parent_category_id %></a></li>  
+</ul>
+    <h1><%= products[0].parent_category_id %></h1>
+    <ul>
+        <table class="table table-inverse">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <!-- <th>Page Title</th> -->
+                <th>Category</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <% for(var i=0; i < products.length; i++) { %>
+              <tr>
+                <td><%= products[i].name %></td>
+                <!-- <td><%= products[i].page_title %></td> -->
+                <!-- <td><%= products[i].parent_category_id %></td> -->
+                <td><%= products[i].page_description %></td>
+                <!-- <td><%= products[i]._id %></td> -->
+                <!-- <td><%= products[i].image  %></td> -->
+                <td><img src="/images/<%= products[i].image %>" ></td>
+                <td><a href="<%= products[0].parent_category_id %>/<%= products[i].id %>" method="GET " class="btn btn-primary" role="button">View</a></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        
+    </ul>
+  
+</body>
+
+<footer>
+  <%- include('partials/footer'); %>
+</footer>
+</html>

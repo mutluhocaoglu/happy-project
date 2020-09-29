@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/main.css">
+<thead>
+    <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    </ul>
+
+    
+  </thead>
+<ul>
+
+    <% for(var i=0; i < products.length ; i++) { %>
+              
+    
+  
+      <div class="card">
+        <img src="/images/<%= products[i].image_groups[0].images[0].link %>" alt="Denim Jeans" style="width:100%">
+        <h1><%= products[i].name %></h1>
+        <p class="price">$<%= products[i].price %></p>
+        <p><%= products[i].page_description %></p>
+        <!-- <p><button>Add to Cart</button></p> -->
+        <p><button><a href="<%= products[0].primary_category_id %>/<%= products[i].id %>" method="GET " class="btn btn-primary" role="button">View</a></button></p>
+      
+     
+    </div>
+     <% } %>
+</ul>
+    </div>
+    <footer>
+      <%- include('partials/footer'); %>
+    </footer>
+  </ul>

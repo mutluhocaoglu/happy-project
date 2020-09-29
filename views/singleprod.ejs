@@ -1,0 +1,48 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css">
+  <title>OSF Global</title>
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="/cart">Cart</a>
+    <a href="/wishlist">Wishlist</a></div>
+</head>
+<thead>
+    <ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    </ul>
+
+    
+  </thead>
+<ul>
+
+    <% for(var i=0; i < products.length; i++) { %>
+              
+    
+  
+    <div class="cards">
+      <img src="/images/<%= products[i].image_groups[0].images[0].link %>" alt="" style="width:100%">
+      <h1><%= products[i].name %></h1>
+      <p class="price">$<%= products[i].price %></p>
+      <p><%= products[i].page_description %></p>
+      <form action="/addtocart" method="POST">
+        <button type="submit" style="width: 375px; ">Add To Cart</button>
+      </form>
+      <form action="/addtowishlist" method="POST">
+        <button type="submit" style="width: 375px; ">Add To Wishlist</button>
+      </form>
+     
+    </div>
+     <% } %>
+</ul>
+    </div>
+    
+  </ul>
+
+  <footer>
+    <%- include('partials/footer'); %>
+  </footer>
+
+  

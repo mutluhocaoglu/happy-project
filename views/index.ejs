@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>OSF Global</title>
+    <h1>OSF Global</h1>
+    <header>
+
+      <% if (!isAuthenticated) { %>
+      <div class="topnav">
+        <a href="/">Home</a>
+        <a style="float:right" href="/login" class="h button" role="button">Login</a>
+        <a style="float:right" href="/register" class="h button" role="button">Register</a>
+       <form action="/search" > <input type="text"  placeholder="Search.." name="search" style="width: 300px; margin-left: 500px;" >
+    <button type="submit" style="width: 100px; ">Search</button>
+  </form>
+        
+        
+      </div>
+    </head>
+    <head>
+      <% } if (isAuthenticated) { %>
+      <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/cart">Cart</a>
+        <a href="/wishlist">Wishlist</a>
+        
+        <a style="float:right" href="/logout" class="h button" role="button">Logout</a>
+        <form action="/search" method="GET">  <input type="text"  placeholder="Search.." name="search" style="width: 300px; margin-left: 285px;" >
+          <button type="submit" style="width: 100px; ">Search</button>
+        </form>
+        
+      </div>
+      <% } %>
+    </header>
+
+</head>
+<body>   
+    <div class="card">
+      <img src="\images\products\large\PG.52001RUBN4Q.BLACKFB.PZ.jpg" alt="..." style="width: 170%;" >
+      <a href="/index/mens"><p><button>Men's Categories</button></p></a>
+     
+    </div>
+
+          
+    <div class="card">
+      <img src="\images\products\large\PG.10190073.JJ772XX.PZ.jpg" alt="..." style="width: 170%;">
+      <a href="/index/womens"><p><button>Women's Categories</button></p></a>
+
+    </div>
+</body>
+
+
+<footer>
+  <%- include('partials/footer'); %>
+</footer>
+
+</html>
+
